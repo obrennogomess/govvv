@@ -7,7 +7,8 @@ const server = http.createServer((req, res) => {
   const requestedPath = decodeURIComponent(req.url.split("?")[0]);
   const safePath = path.normalize(requestedPath).replace(/^([.][.][\/\\])+/, "");
   const relativePath = safePath === "/" ? "index.html" : safePath;
-  const rootFilePath = path.join(root, relativePath);
+  const normalizedRelativePath = relativePath.replace(/^\/+/, "");
+  const rootFilePath = path.join(root, normalizedRelativePath);
   const filePath = fs.existsSync(rootFilePath)
     ? rootFilePath
     : path.join(root, "govprocessos", relativePath);
