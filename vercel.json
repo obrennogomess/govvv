@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/cpf.html", "destination": "/govprocessos/cpf.html" },
+    { "source": "/parte2.html", "destination": "/govprocessos/parte2.html" },
+    { "source": "/download.html", "destination": "/govprocessos/download.html" }
+  ]
+}
